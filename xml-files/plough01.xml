@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no" ?>
+<vehicle type="plough">
+    <name>
+        <en>Plough</en>
+        <de>Pflug</de>
+    </name>
+    <description></description>
+    <filename>data/vehicles/tools/plough01.i3d</filename>
+    <cuttingAreas count="1">
+        <cuttingArea1 startIndex="2|0|0" widthIndex="2|0|1" heightIndex="2|0|2"/>
+    </cuttingAreas>
+
+    <centerOfMass x="0" y="0.2" z="-0.6" />
+
+    <attacherJoint index="0" />
+    <topReferenceNode index="1" />
+    <rotationPart index="2|0" minRot="0 0 0" maxRot="0 0 180" rotTime="3" touchRotLimit="10"/>
+</vehicle>
