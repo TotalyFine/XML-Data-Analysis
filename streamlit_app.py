@@ -15,11 +15,10 @@ st.set_page_config(
 
 
 # -----------------------------------------------------------------------------
-# Declare some useful functions.
+# Functions.
 
 
-def connect_db():
-    """Connects to the sqlite database."""
+def connect_db():  # Connects to the sqlite database
 
     DB_FILENAME = Path(__file__).parent / "inventory.db"
     db_already_exists = DB_FILENAME.exists()
@@ -29,9 +28,8 @@ def connect_db():
 
     return conn, db_was_just_created
 
+def initialize_data(conn): # Initializes the inventory table with some data
 
-def initialize_data(conn):
-    """Initializes the inventory table with some data."""
     cursor = conn.cursor()
 
     cursor.execute(
@@ -89,9 +87,7 @@ def initialize_data(conn):
     )
     conn.commit()
 
-
-def load_data(conn):
-    """Loads the inventory data from the database."""
+def load_data(conn): # Loads the inventory data from the database
     cursor = conn.cursor()
 
     try:
@@ -116,9 +112,7 @@ def load_data(conn):
 
     return df
 
-
-def update_data(conn, df, changes):
-    """Updates the inventory data in the database."""
+def update_data(conn, df, changes): #Updates the inventory data in the database
     cursor = conn.cursor()
 
     if changes["edited_rows"]:
@@ -167,21 +161,18 @@ def update_data(conn, df, changes):
 
 
 # -----------------------------------------------------------------------------
-# Draw the actual page, starting with the inventory table.
+# Display Content
 
-# Set the title that appears at the top of the page.
+# Title top of the page.
 """
-# :shopping_bags: Starting today!
+# :eyes: Starting today!
 
-**Welcome to Alice's Corner Store's intentory tracker!**
-This page reads and writes directly from/to our inventory database.
+**Struggling start...**
+Need to get data loaded..
 """
 
 st.info(
-    """
-    Use the table below to add, remove, and edit items.
-    And don't forget to commit your changes when you're done.
-    """
+    """Where i start.. """
 )
 
 # Connect to database and create table if needed
@@ -194,6 +185,8 @@ if db_was_just_created:
 
 # Load data from database
 df = load_data(conn)
+
+st.info(df.columns)
 
 # Display data with editable table
 edited_df = st.data_editor(
