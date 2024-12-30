@@ -10,3 +10,6 @@ sup, this is for training purpuses... plesase ignore :))
 • Learn to code
 
 • Get gud
+
+
+hello
