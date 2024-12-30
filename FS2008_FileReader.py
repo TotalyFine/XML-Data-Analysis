@@ -42,8 +42,6 @@ def printlist(lst): # Prints all list in the column
     for i in lst:
         print(i)
 
-#BEFORE UPDATE
-
 def read_xml_recursively(element, level=0): # Read the XML files content  
     """Recursively print all elements and their attributes."""
     indent = "  " * level  # Indentation for readability
@@ -92,14 +90,9 @@ def write_to_json(datatowrite,filename):
     with open(newfilename, "a") as jsonfile:
         json.dump(datatowrite,jsonfile)
 
-print("________________________________ SCAN FILES ________________________________")
+# Scan files -  only localy!
+#list_files_and_folders(Scaning_path) # SCAN FILES
 
-list_files_and_folders(Scaning_path) # SCAN FILES
+#Group in to lists - Only after scanned localy
+#Sort_XMLRootTypes(list_xml_files)
 
-print(" ________________________________ PRINT XML LIST ________________________________")
-
-Sort_XMLRootTypes(list_xml_files)
-
-print(" ________________________________ PRINT ROOT types ________________________________")
-
-print(ReadXML(list_xml_files[1]))

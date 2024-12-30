@@ -172,11 +172,18 @@ Need to get data loaded..
 """
 
 st.info(
-    """Where i start.. """
+    """Importing Test xml """
 )
+
+
+## TEST iporting from direly from xmlfile
+xmldf1 = pd.read_xml("xml-files/cultivator01.xml")
+
+st.info(xmldf1.head())
 
 # Connect to database and create table if needed
 conn, db_was_just_created = connect_db()
+
 
 # Initialize data.
 if db_was_just_created:
