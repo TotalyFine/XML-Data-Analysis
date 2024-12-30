@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no" ?>
+<vehicle type="cultivator">
+    <name>
+        <en>Cultivator</en>
+        <de>Grubber</de>
+    </name>
+    <description></description>
+    <filename>data/vehicles/tools/cultivator01.i3d</filename>
+    <cuttingAreas count="1">
+        <cuttingArea1 startIndex="0" widthIndex="1" heightIndex="2"/>
+    </cuttingAreas>
+
+    <centerOfMass x="0" y="0" z="-1.7466" />
+
+    <attacherJoint index="3" />
+    <topReferenceNode index="4" />
+    <drum index="6" rotationScale="12"/>
+</vehicle>
