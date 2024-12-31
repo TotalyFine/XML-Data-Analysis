@@ -176,13 +176,17 @@ st.info(
 )
 
 
-## TEST iporting from direly from xmlfile
-xmldf1 = pd.read_csv("test.csv")
 
-st.info("HELP")
+## TEST iporting from direly from xmlfile
+#xmldf1 = pd.read_csv("test.csv")
+#xmldf1 = pd.read_xml("test-file.xml")
+
+#st.info(xmldf1)
+
 
 # Connect to database and create table if needed
 conn, db_was_just_created = connect_db()
+
 
 
 # Initialize data.
@@ -193,7 +197,10 @@ if db_was_just_created:
 # Load data from database
 df = load_data(conn)
 
-st.info(df.columns)
+
+
+
+################################################# OLD ########################
 
 # Display data with editable table
 edited_df = st.data_editor(
